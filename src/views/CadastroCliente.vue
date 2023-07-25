@@ -1,7 +1,7 @@
 <template>
-    <Cadastro />
+    <Register />
 </template>
 
 <script setup>
-  import Cadastro from '@/components/Cadastro.vue'
+  import Register from '@/components/Register.vue'
 </script>
