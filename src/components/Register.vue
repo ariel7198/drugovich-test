@@ -19,7 +19,7 @@
                             elevation="0" 
                             size="large"
                             color="blue"
-                            prepend-icon="mdi-plus"
+                            prepend-icon="mdi-arrow-left"
                         >        
                             Voltar 
                         </v-btn> 
@@ -34,26 +34,37 @@
                         <v-text-field
                             v-model="name"
                             label="Nome"
+                            data-testid="name"
+                            required
                         ></v-text-field>
 
                         <v-text-field
                             v-model="cnpj"
                             label="CNPJ"
+                            data-testid="cnpj"
+                            required
                         ></v-text-field>
 
                         <v-select
                             v-model="status"
                             :items="['Ativo','Inativo']"
                             label="Status"
+                            data-testid="status"
+                            required
                         ></v-select>
-
-                        <v-btn
-                            class="me-4"
-                            color="green"
-                            type="submit"
-                        >
-                            Salvar
-                        </v-btn>
+                        <v-row>
+                            <v-col class="d-flex justify-end">
+                                <v-btn
+                                    class="me-4"
+                                    color="green"
+                                    type="submit"
+                                    data-testid="salvar-btn"
+                                >
+                                    Salvar
+                                </v-btn>
+                            </v-col>
+                        </v-row>
+                        
 
                     </form>
                 </v-col>
@@ -70,7 +81,7 @@
             return{
                 name: '',
                 cnpj: '',
-                status: false
+                status: 'Ativo'
             }
         },
         methods: {
