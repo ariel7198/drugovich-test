@@ -7,7 +7,7 @@
 
       <h1 class="text-h2 font-weight-bold">Vuetify</h1>
 
-      <router-link to="/cadastro">Go to Home</router-link>
+      
 
       <div class="py-14" />
 
