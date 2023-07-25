@@ -1,5 +1,5 @@
 <template>
-    <v-container color="red">
+    <v-container>
         <v-responsive>
             <v-row justify="space-between p-5"> 
                 <v-col class="d-flex justify-start">
@@ -61,6 +61,7 @@ import axios from "axios";
         },
 
         created() {
+            console.log("created")
             axios  
                 .get(this.apiURL)
                 .then(response => this.clients = response.data)
