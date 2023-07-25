@@ -1,28 +1,41 @@
 <template>
-    <v-container>
+    <v-container color="red">
         <v-responsive>
-            <v-row class="justify-center"> 
-                <v-col>
-                    <h1> 
+            <v-row justify="space-between p-5"> 
+                <v-col class="d-flex justify-start">
+                    <h1 class="font-weight-regular"> 
                         <v-icon
-                            size="large"
-                            color="teal-darken-2"
-                            icon="mdi-email"
+                            size="small"
+                            color="black"
+                            icon="mdi-account-outline"
                         ></v-icon>
                         Listagem de clientes
                     </h1>
                 </v-col>
-                <v-col>
+                <v-col class="d-flex justify-end">
                     <router-link to="/cadastro"> 
-                        <v-btn> + NOVO </v-btn> 
+                        <v-btn 
+                            rounded="lg" 
+                            elevation="0" 
+                            size="large"
+                            color="blue"
+                            prepend-icon="mdi-plus"
+                        >        
+                            NOVO 
+                        </v-btn> 
                     </router-link>
                     
                 </v-col>
+                <v-divider></v-divider>
+            </v-row>
+            <v-row>
+                <v-col>
+                    <template v-for="client in clients">
+                        <client-item :name="client.name" :cnpj="client.cnpj" :status="client.status"/>
+                    </template> 
+                </v-col>
             </v-row>
             
-            <template v-for="client in clients">
-                <client-item :name="client.name" :cnpj="client.cnpj" :status="client.status"/>
-            </template> 
 
         </v-responsive>
     </v-container>
