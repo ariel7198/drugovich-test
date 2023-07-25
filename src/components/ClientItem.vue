@@ -1,12 +1,12 @@
 <template>
     <div> 
-        <v-card flat class="p-5">
+        <v-card flat class="pa-3">
             <v-row>
-                <v-col cols="8" class="d-flex align-center justify-start">
+                <v-col cols="12" md="8" sm="12" class="d-flex align-center justify-start">
                     <h3 class="mx-3 font-weight-medium"> {{ name }} </h3>
                     <p> {{ cnpj }} </p>
                 </v-col>
-                <v-col cols="2" class="d-flex align-center justify-start">
+                <v-col cols="12" md="2" sm="6" class="d-flex align-center justify-start">
                     
                     <template v-if="status==='Inativo'"> 
                         <v-badge
@@ -27,7 +27,7 @@
                         Ativo
                     </template> 
                 </v-col>
-                <v-col cols="2" class="d-flex align-center justify-end">
+                <v-col cols="12" md="2" sm="6" class="d-flex align-center justify-end">
                     <v-btn 
                         rounded="lg" 
                         elevation="0" 
