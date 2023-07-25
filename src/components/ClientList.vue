@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-responsive>
-            <v-row justify="space-between p-5"> 
+            <v-row class="d-flex justify-space-between p-5"> 
                 <v-col class="d-flex justify-start">
                     <h1 class="font-weight-regular"> 
                         <v-icon
@@ -30,9 +30,13 @@
             </v-row>
             <v-row>
                 <v-col>
+                    
                     <template v-for="client in clients">
                         <client-item :name="client.name" :cnpj="client.cnpj" :status="client.status"/>
                     </template> 
+                     
+                    <p class="ma-3"> Exibindo {{ clients.length }} de {{ clients.length }}  </p>
+                    
                 </v-col>
             </v-row>
             
@@ -56,17 +60,19 @@ import axios from "axios";
         data() {
             return {
                 apiURL: 'https://demo4529396.mockable.io/clients',
-                clients: ''
+                clients: '',
             }
         },
 
         created() {
-            console.log("created")
             axios  
                 .get(this.apiURL)
                 .then(response => this.clients = response.data)
 
                 .catch((error) => console.log("Erro na requisição: " + error)) 
+        },
+        computed: {
+            
         }
     }
 </script>
