@@ -9,8 +9,6 @@
 //   $color-pack: false
 // );
 
-$app-bar-background: red !important;
-
 .v-app-bar.v-toolbar {
     padding: 15px 0;
     background: #616161;
@@ -18,4 +16,7 @@ $app-bar-background: red !important;
 .v-card{
     padding: 15px;
     margin: 10px;
+}
+.v-application{
+    background: #F6F6F6;
 }
