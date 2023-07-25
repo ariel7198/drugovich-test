@@ -1,7 +1,7 @@
 <template>
-  <Listagem />
+  <ClientList />
 </template>
 
 <script setup>
-  import Listagem from '@/components/Listagem.vue'
+  import ClientList from '@/components/ClientList.vue'
 </script>
