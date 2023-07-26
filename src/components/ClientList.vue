@@ -30,12 +30,19 @@
             </v-row>
             <v-row>
                 <v-col>
-                    
+                    <v-snackbar
+                        v-model="snackbarError"
+                        :timeout="2000"
+                        color="error"
+                    >
+                        <p> Houve um erro na sua requisição, tente novamente mais tarde</p>
+
+                    </v-snackbar>
                     <template v-for="client in clients">
                         <client-item :name="client.name" :cnpj="client.cnpj" :status="client.status"/>
                     </template> 
                      
-                    <p class="ma-3"> Exibindo {{ clients.length }} de {{ clients.length }}  </p>
+                    <p class="ma-3"> Exibindo {{ clients.length }} de {{ clients.length }} clientes  </p>
                     
                 </v-col>
             </v-row>
@@ -61,15 +68,26 @@ import axios from "axios";
             return {
                 apiURL: 'https://demo4529396.mockable.io/clients',
                 clients: '',
+                loading: true,
+                snackbarError: false
             }
         },
 
         created() {
             axios  
                 .get(this.apiURL)
-                .then(response => this.clients = response.data)
+                .then(response => {
+                    this.clients = response.data
+                    this.loading = false
+                    this.snackbarError = false
+                })
 
-                .catch((error) => console.log("Erro na requisição: " + error)) 
+                .catch((error) => {
+                    console.log("Erro na requisição: " + error) 
+                    this.loading = false
+                    this.snackbarError = true
+                    }
+                ) 
         },
         computed: {
             
