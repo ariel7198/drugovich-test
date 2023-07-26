@@ -32,7 +32,7 @@
                 <v-col>
                     <v-snackbar
                         v-model="snackbarError"
-                        :timeout="2000"
+                        :timeout="5000"
                         color="error"
                     >
                         <p> Houve um erro na sua requisição, tente novamente mais tarde</p>
