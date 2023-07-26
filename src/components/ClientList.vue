@@ -53,9 +53,9 @@
 </template>
 
 <script>
-import ClientItem from './ClientItem.vue';
+import ClientItem from './ClientItem.vue'
 
-import axios from "axios";
+import axios from "axios"
 
     export default {
         name: 'Cadastro',
