@@ -16,11 +16,11 @@ describe('Register', () => {
     // Mock do método "submit"
     wrapper.vm.submit = jest.fn();
 
-    // Encontrar o formulário e simular o envio
+    // Encontra o formulário e simular o envio
     const form = wrapper.find('form');
     await form.trigger('submit');
 
-    // Verificar se o método "submit" foi chamado
+    // Verifica se o método "submit" foi chamado
     expect(wrapper.vm.submit).toHaveBeenCalled();
   });
 
@@ -30,7 +30,7 @@ describe('Register', () => {
     //Mock do método "submit"
     wrapper.vm.submit = jest.fn();
 
-    //Encontrar o formulário e simular o envio
+    //Encontra o formulário e simular o envio
     const form = wrapper.find('form');
     await form.trigger('submit');
 
