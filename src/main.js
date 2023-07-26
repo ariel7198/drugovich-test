@@ -25,8 +25,8 @@ const vuetify = createVuetify({
 
 const app = createApp(App)
 
-registerPlugins(app)
-
 app.use(vuetify)
+
+registerPlugins(app)
 
 app.mount('#app')
