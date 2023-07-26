@@ -30,6 +30,22 @@
             </v-row>
             <v-row>
                 <v-col md="6" sm="12">
+                    <v-snackbar
+                        v-model="snackbarError"
+                        :timeout="2000"
+                        color="error"
+                    >
+                        <p> Houve um erro no seu cadastro, tente novamente mais tarde </p>
+
+                    </v-snackbar>
+                    <v-snackbar
+                        v-model="snackbarSuccess"
+                        :timeout="2000"
+                        color="success"
+                    >
+                        <p> Cadastro concluído! </p>
+
+                    </v-snackbar>
                     <form @submit.prevent="submit">
                         <v-text-field
                             v-model="name"
@@ -81,11 +97,16 @@
             return{
                 name: '',
                 cnpj: '',
-                status: 'Ativo'
+                status: 'Ativo',
+
+                loading: true,
+                snackbarError: false,
+                snackbarSuccess: false,
             }
         },
         methods: {
             submit(){
+                this.snackbarSuccess = true
                 //codigo para enviar cadastro para a API
             }
         }
