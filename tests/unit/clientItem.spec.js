@@ -1,5 +1,5 @@
 import { mount, createLocalVue } from '@vue/test-utils';
-import ClientItem from '../../src/components/ClientItem.vue'; // Certifique-se de ajustar o caminho corretamente, caso necessário.
+import ClientItem from '../../src/components/ClientItem.vue'; 
 
 describe('ClientItem', () => {
     
@@ -42,7 +42,7 @@ describe('ClientItem', () => {
       //Renderiza o componente com o valor de status 'Inativo'
       const wrapper = mount(ClientItem, {
         props: {
-          name: 'Test Client',
+          name: 'Test Client 2',
           cnpj: '12345678901234',
           status: 'Inativo',
         },
