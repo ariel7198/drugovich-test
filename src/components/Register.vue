@@ -56,6 +56,7 @@
 
                         <v-text-field
                             v-model="cnpj"
+                            maxlength="14"
                             label="CNPJ"
                             data-testid="cnpj"
                             required
