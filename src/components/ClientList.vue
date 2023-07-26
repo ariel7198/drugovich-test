@@ -9,7 +9,7 @@
                             color="black"
                             icon="mdi-account-outline"
                         ></v-icon>
-                        Listagem de clientes
+                        Listagem de Clientes
                     </h1>
                 </v-col>
                 <v-col class="d-flex justify-end">
