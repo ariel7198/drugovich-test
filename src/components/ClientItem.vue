@@ -34,6 +34,7 @@
                         size="large"
                         color="orange-darken-2"
                         class="text-white"
+                        @click=edit
                     >        
                         EDITAR 
                     </v-btn>
@@ -56,7 +57,9 @@
         },
 
         methods: {
-            
+            edit(){
+                /*  */
+            }
         },
 
         computed: {
